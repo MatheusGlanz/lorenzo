@@ -9,6 +9,8 @@ const { Pool } = pkg;
 
 // Cria o pool de conexões com o PostgreSQL
 export const pool = new Pool({
+  connectionString: process.env.DATABASE_URL,
+  ssl: { rejectUnauthorized: false },
   user: process.env.DB_USER || "postgres",
   host: process.env.DB_HOST || "localhost",
   database: process.env.DB_DATABASE || "lorenzo",
