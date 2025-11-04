@@ -1,0 +1,242 @@
+/* --- Importação da Fonte --- */
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap');
+
+/* --- Variáveis de Cor --- */
+:root {
+  --primary-color: #4a7b9d;
+  --secondary-color: #f0e18c;
+  --text-color: #000000;
+  --light-text-color: #ffffff;
+  --header-bg: rgba(74, 123, 157, 0.85);
+  --form-bg: rgba(255, 255, 255, 0.75);
+  --border-color: #ccc;
+}
+
+/* --- Reset e Base --- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Nunito', sans-serif;
+  line-height: 1.6;
+  color: var(--text-color);
+  background-image: url(../public/Criativo-Lorenzo.png);
+  background-size: cover;
+  background-position: center top;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 100vh;
+  padding: 2rem 1rem;
+}
+
+/* --- Container Principal --- */
+.container {
+  width: 100%;
+  max-width: 600px;
+  background-color: var(--form-bg);
+  border-radius: 12px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease-in-out;
+}
+
+/* --- Header --- */
+header {
+  background-color: var(--header-bg);
+  color: var(--light-text-color);
+  padding: clamp(1.5rem, 3vw, 2.5rem);
+  text-align: center;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.15);
+}
+
+header h1 {
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  font-size: clamp(1.8rem, 4vw, 2.5rem);
+}
+
+header p {
+  font-size: clamp(0.9rem, 2vw, 1rem);
+  font-weight: 400;
+}
+
+/* --- Formulário --- */
+form {
+  padding: clamp(1.5rem, 3vw, 3rem);
+}
+
+form h2 {
+  text-align: center;
+  color: var(--primary-color);
+  font-size: clamp(1.4rem, 3vw, 1.8rem);
+  margin-bottom: 2rem;
+}
+
+/* --- Campos e Inputs --- */
+.dados, .opcoes, .numero-pessoa {
+  margin-bottom: 1.5rem;
+}
+
+label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+  color: var(--text-color);
+}
+
+input[type="text"],
+input[type="number"] {
+  width: 100%;
+  padding: 0.8rem 1rem;
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  font-family: 'Nunito', sans-serif;
+  font-size: 1rem;
+  background-color: #ffffff;
+  color: var(--text-color);
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+input[type="text"]:focus,
+input[type="number"]:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgba(74, 123, 157, 0.2);
+}
+
+/* --- Opções de Rádio --- */
+.opcoes div {
+  display: flex;
+  align-items: center;
+  background-color: #ffffff;
+  padding: 0.8rem 1rem;
+  border-radius: 6px;
+  border: 1px solid var(--border-color);
+  margin-bottom: 0.5rem;
+}
+
+.opcoes input[type="radio"] {
+  margin-right: 0.75rem;
+  accent-color: var(--primary-color);
+  transform: scale(1.1);
+}
+
+.opcoes label {
+  margin-bottom: 0;
+  font-weight: 400;
+}
+
+/* --- Layout de Adultos/Crianças --- */
+.numero-pessoa {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+
+/* --- Botão --- */
+button[type="submit"] {
+  display: block;
+  width: 100%;
+  padding: 1rem;
+  border: none;
+  border-radius: 6px;
+  background-color: var(--primary-color);
+  color: var(--light-text-color);
+  font-family: 'Nunito', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button[type="submit"]:hover {
+  background-color: #3a627d;
+  transform: translateY(-2px);
+}
+
+/* --- RESPONSIVIDADE --- */
+
+/* Telas muito pequenas (até 380px, celulares antigos) */
+@media (max-width: 380px) {
+  body {
+    padding: 1rem 0.5rem;
+    align-items: flex-start;
+  }
+
+  .container {
+    width: 95%;
+  }
+
+  header h1 {
+    font-size: 1.6rem;
+  }
+}
+
+/* Tablets e telas médias (>=500px) */
+@media (min-width: 500px) {
+  body {
+    align-items: center;
+  }
+
+  .numero-pessoa {
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+}
+
+/* Desktop (>=768px) */
+@media (min-width: 768px) {
+  header {
+    padding: 2.5rem;
+  }
+
+  form {
+    padding: 3rem 2.5rem;
+  }
+}
+
+/* Telas grandes (>=1200px) */
+@media (min-width: 1200px) {
+  .container {
+    max-width: 700px;
+  }
+
+  header h1 {
+    font-size: 2.5rem;
+  }
+
+  form h2 {
+    font-size: 2rem;
+  }
+}
+
+/* Monitores 4K e TVs */
+@media (min-width: 1800px) {
+  .container {
+    max-width: 900px;
+    padding: 2rem;
+  }
+
+  body {
+    background-size: cover;
+    background-position: center center;
+  }
+}
