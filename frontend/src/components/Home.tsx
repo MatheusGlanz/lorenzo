@@ -81,11 +81,7 @@ export function Home(): JSX.Element {
             />
             <label htmlFor="confirmado-sim">Sim, estarei lá!</label>
           </div>
-          <div>
-            <input type="radio" id="confirmado-nao" name="confirmado" value="nao" />
-            <label htmlFor="confirmado-nao">Não posso comparecer!</label>
-          </div>
-        </div>
+
 
         <div className="numero-pessoa">
           <label htmlFor="adultos">Nº de Adultos:</label>
