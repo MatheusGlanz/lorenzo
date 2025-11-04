@@ -81,6 +81,7 @@ export function Home(): JSX.Element {
             />
             <label htmlFor="confirmado-sim">Sim, estarei lá!</label>
           </div>
+        </div>
 
 
         <div className="numero-pessoa">
